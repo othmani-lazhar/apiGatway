@@ -1,1 +1,12 @@
-spring.application.name=apiGatway
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: keycloak
+          uri: http://localhost:8282
+          predicates:
+            - Path=/realms/**
+
+
